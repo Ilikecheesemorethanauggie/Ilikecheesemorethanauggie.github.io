@@ -1,0 +1,55 @@
+.root{
+}
+:root{
+  --bg-1: #06b6d4; /* bright teal */
+  --bg-2: #0f766e; /* deep teal */
+  --card:#052f2c;
+  --muted:#a7f3eb;
+  --accent:#7dd3fc;
+  --text:#e6fff9;
+}
+*{box-sizing:border-box}
+html,body{height:100%;min-height:100vh}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  /* Keep the gradient fixed to the viewport so it fills the whole page */
+  background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.site-header{padding:2.25rem 1rem 0;text-align:center}
+.site-header h1{margin:0;font-size:2rem}
+.site-header .brand{font-size:4rem;line-height:1;margin:0;font-weight:900;letter-spacing:.06em;text-transform:uppercase;
+  background:linear-gradient(90deg,#e6fffa,#bdefff,#7dd3fc);-webkit-background-clip:text;color:transparent;
+  -webkit-text-stroke: 0.8px rgba(0,0,0,0.12);text-shadow:0 8px 22px rgba(3,37,36,0.28);
+}
+.tagline{color:var(--muted);margin-top:.25rem}
+.container{max-width:1000px;margin:2rem auto;padding:1rem;display:grid;grid-template-columns:1fr 380px;gap:1rem}
+.editor{background:rgba(2,17,16,0.22);backdrop-filter: blur(6px);padding:1rem;border-radius:10px;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.04)}
+.controls{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.5rem}
+.controls label{font-size:.9rem;font-weight:500;margin-top:.5rem}
+.controls input,.controls select{width:100%;padding:.5rem .7rem;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#ffffff;font-size:0.95rem}
+.controls input::placeholder{color:rgba(255,255,255,0.4)}
+.cipher-help{display:block;margin-top:.25rem;font-size:.85rem;color:var(--muted)}
+.button-group{display:flex;gap:.5rem;margin-top:.75rem}
+.button-group button,.controls button{background:var(--accent);border:none;color:#06202a;padding:.5rem .8rem;border-radius:6px;cursor:pointer;font-weight:600;flex:1;transition:all 0.2s}
+.button-group button:hover,.controls button:hover{background:#5fc9f8;transform:translateY(-1px)}
+textarea#code{width:100%;min-height:320px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#071226;color:var(--text);padding:1rem;font-family:Menlo,Monaco,monospace;font-size:13px;resize:vertical}
+.output{background:linear-gradient(180deg,rgba(1,26,24,0.12) 0%, rgba(2,19,18,0.10) 100%);padding:1rem;border-radius:8px;height:100%;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.03)}
+.output h2{margin:0 0 .5rem 0;font-size:1rem}
+#outputArea{background:#02101a;color:#bfeafc;padding:1rem;border-radius:6px;flex:1;overflow:auto;font-family:Menlo,monospace;font-size:13px}
+.site-footer{text-align:center;color:var(--muted);padding:1rem 0}
+
+/* Ensure footer doesn't paint its own background so the body gradient shows through */
+.site-footer{background:transparent}
+
+@media (max-width:900px){
+  .container{grid-template-columns:1fr;}
+  .output{order:2}
+  .site-header .brand{font-size:2.25rem}
+}

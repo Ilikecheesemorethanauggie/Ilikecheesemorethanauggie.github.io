@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SPY DECODER</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="brand">SPY DECODER</h1>
+    <p class="tagline">Secret agent cipher tool for encoding and decoding covert messages.</p>
+  </header>
+
+  <main class="container">
+    <section class="editor">
+      <div class="controls">
+        <label for="cipherSelect">Select Cipher:</label>
+        <select id="cipherSelect">
+          <option value="none">None</option>
+          <option value="caesar">Caesar (Shift)</option>
+          <option value="atbash">Atbash (Mirror)</option>
+          <option value="vigenere">Vigenère (Key-based)</option>
+          <option value="base64">Base64 (Encoding)</option>
+        </select>
+
+        <label for="cipherKey">Secret Key:</label>
+        <input id="cipherKey" placeholder="e.g. 3 or SECRET" />
+        <small id="cipherHelp" class="cipher-help" aria-live="polite">Choose a cipher and provide a key if required.</small>
+
+        <div class="button-group">
+          <button id="encodeBtn">🔐 Encode</button>
+          <button id="decodeBtn">🔓 Decode</button>
+          <button id="clearBtn">Clear</button>
+        </div>
+      </div>
+      <textarea id="code" spellcheck="false" placeholder="Enter your secret message here..."></textarea>
+    </section>
+
+    <section class="output">
+      <h2>Result</h2>
+      <pre id="outputArea" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Run this locally with: <code>python -m http.server 8080</code></small>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
